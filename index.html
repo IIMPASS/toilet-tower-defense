@@ -17,7 +17,84 @@
   --white:#f0f4ff;--dim:#8899b0;--dim2:#3a4a5e;
   --card:#0f1828;--card2:#141f30;--card3:#1a2640;
   --br:rgba(255,255,255,.07);--brgold:rgba(249,199,79,.3);
+  --admin:#ff006e;
 }
+/* LOGIN */
+#login{z-index:100;align-items:center;justify-content:center;background:radial-gradient(ellipse at 30% 70%,rgba(67,97,238,.22),transparent 55%),radial-gradient(ellipse at 70% 30%,rgba(124,45,139,.28),transparent 55%),linear-gradient(160deg,#06080f,#0b0f1c)}
+.login-box{background:linear-gradient(145deg,rgba(15,24,40,.98),rgba(20,31,48,.98));border:2px solid rgba(249,199,79,.25);border-radius:22px;padding:36px 40px;text-align:center;width:380px;max-width:95vw;box-shadow:0 0 60px rgba(0,0,0,.6),0 0 30px rgba(249,199,79,.08);animation:loginIn .5s cubic-bezier(.34,1.56,.64,1)}
+@keyframes loginIn{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:scale(1)}}
+.login-logo{font-size:3.5rem;margin-bottom:8px;animation:logoBounce 2s ease-in-out infinite}
+@keyframes logoBounce{0%,100%{transform:translateY(0) rotate(-5deg)}50%{transform:translateY(-8px) rotate(5deg)}}
+.login-title{font-family:'Boogaloo',cursive;font-size:1.8rem;letter-spacing:2px;background:linear-gradient(120deg,var(--gold),var(--gold2),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.login-sub{font-size:.7rem;color:var(--dim);margin-bottom:6px;letter-spacing:1px}
+.login-by{font-size:.65rem;color:var(--dim);margin-bottom:20px}.login-by span{color:var(--gold);font-weight:800}
+.login-form{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.login-inp{background:rgba(255,255,255,.07);border:1.5px solid rgba(255,255,255,.1);border-radius:10px;padding:10px 14px;color:var(--white);font-size:.82rem;transition:border-color .2s}
+.login-inp:focus{border-color:rgba(249,199,79,.5)}.login-inp::placeholder{color:var(--dim2)}
+.login-btn{padding:11px;border-radius:10px;font-weight:900;font-size:.88rem;letter-spacing:.5px;transition:all .18s}.login-btn:hover{transform:scale(1.03)}
+.login-btn-main{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a0800;box-shadow:0 0 20px rgba(249,199,79,.3)}
+.login-btn-google{background:rgba(255,255,255,.08);color:var(--white);border:1.5px solid rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center;gap:8px}
+.login-btn-google:hover{background:rgba(255,255,255,.14)}
+.login-btn-guest{background:rgba(255,255,255,.04);color:var(--dim);border:1px solid rgba(255,255,255,.08);font-size:.75rem;padding:8px}
+.login-divider{display:flex;align-items:center;gap:10px;color:var(--dim);font-size:.68rem;margin:4px 0}
+.login-divider::before,.login-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08)}
+.login-switch{font-size:.68rem;color:var(--dim);margin-top:8px}.login-switch a{color:var(--gold);cursor:pointer;font-weight:700}
+/* GOOGLE POPUP */
+.gp-popup{position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:500;display:none;align-items:center;justify-content:center}.gp-popup.on{display:flex}
+.gp-box{background:#fff;border-radius:16px;padding:28px 32px;width:340px;text-align:center;animation:loginIn .35s cubic-bezier(.34,1.56,.64,1)}
+.gp-logo{font-size:2.5rem;margin-bottom:8px}.gp-title{font-size:1.1rem;font-weight:800;color:#1a1a2e;margin-bottom:4px}.gp-sub{font-size:.72rem;color:#666;margin-bottom:18px}
+.gp-accounts{display:flex;flex-direction:column;gap:8px}
+.gp-acc{display:flex;align-items:center;gap:10px;background:#f5f5f5;border:1.5px solid #e0e0e0;border-radius:10px;padding:10px 14px;cursor:pointer;transition:all .15s;text-align:left}
+.gp-acc:hover{border-color:#4361ee;background:#f0f2ff}
+.gp-avatar{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:800;color:#fff;flex-shrink:0}
+.gp-uname{font-weight:800;font-size:.82rem;color:#1a1a2e}.gp-email{font-size:.68rem;color:#666}
+.gp-cancel{margin-top:12px;padding:7px 20px;background:#f5f5f5;border:1px solid #ddd;border-radius:8px;color:#666;font-size:.75rem;font-weight:700;cursor:pointer;width:100%}
+/* ADMIN PANEL */
+.adm-panel-bg{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:400;display:none;align-items:center;justify-content:center}.adm-panel-bg.on{display:flex}
+.adm-box{background:linear-gradient(145deg,#0f0520,#1a0535);border:2px solid var(--admin);border-radius:20px;width:min(680px,96vw);max-height:90vh;overflow-y:auto;box-shadow:0 0 60px rgba(255,0,110,.25);animation:loginIn .35s cubic-bezier(.34,1.56,.64,1)}
+.adm-hdr{background:rgba(255,0,110,.1);border-bottom:1.5px solid rgba(255,0,110,.3);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:1;backdrop-filter:blur(10px)}
+.adm-title{font-family:'Boogaloo',cursive;font-size:1.3rem;letter-spacing:2px;color:var(--admin)}
+.adm-close{width:30px;height:30px;border-radius:50%;background:rgba(255,0,110,.2);color:var(--admin);font-weight:900;font-size:.9rem;transition:all .15s}.adm-close:hover{background:rgba(255,0,110,.4)}
+.adm-body{padding:16px}
+.adm-sec{margin-bottom:16px}.adm-sec h3{font-family:'Boogaloo',cursive;font-size:1rem;letter-spacing:1px;color:var(--admin);margin-bottom:10px}
+.adm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px}
+.adm-inp{background:rgba(255,255,255,.07);border:1px solid rgba(255,0,110,.2);border-radius:8px;padding:7px 10px;color:var(--white);font-size:.78rem;width:100%}
+.adm-inp:focus{border-color:rgba(255,0,110,.5)}
+.adm-btn{padding:7px 14px;border-radius:8px;font-weight:800;font-size:.75rem;transition:all .15s}.adm-btn:hover{transform:scale(1.04)}
+.adm-btn-red{background:var(--red);color:#fff}.adm-btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#1a0800}
+.adm-btn-blue{background:var(--blue2);color:#fff}.adm-btn-green{background:var(--green);color:#051a08}.adm-btn-pink{background:var(--admin);color:#fff}
+.adm-urow{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:6px 10px;margin-bottom:5px}
+.adm-urow.is-admin{border-color:rgba(255,0,110,.3);background:rgba(255,0,110,.05)}
+.adm-ua{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:800;color:#fff;flex-shrink:0}
+.adm-uinfo{flex:1}.adm-uname{font-size:.72rem;font-weight:800}.adm-urole{font-size:.58rem;color:var(--dim)}
+.adm-uacts{display:flex;gap:4px}
+.adm-uact{padding:3px 8px;border-radius:6px;font-size:.6rem;font-weight:800;transition:all .14s;border:none;cursor:pointer}.adm-uact:hover{transform:scale(1.07)}
+.adm-act-ban{background:rgba(239,35,60,.2);color:var(--red);border:1px solid rgba(239,35,60,.3)}
+.adm-act-give{background:rgba(87,204,153,.2);color:var(--green);border:1px solid rgba(87,204,153,.3)}
+.adm-act-promo{background:rgba(255,0,110,.2);color:var(--admin);border:1px solid rgba(255,0,110,.3)}
+.adm-log{background:rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:8px;max-height:150px;overflow-y:auto;font-size:.62rem;font-family:monospace;color:#8899b0}
+.adm-log-entry{padding:2px 0;border-bottom:1px solid rgba(255,255,255,.04)}.adm-log-entry.lg{color:var(--green)}.adm-log-entry.lw{color:var(--gold)}.adm-log-entry.lb{color:var(--red)}.adm-log-entry.la{color:var(--admin)}
+.admin-ulist{display:flex;flex-direction:column;gap:5px;max-height:200px;overflow-y:auto}
+/* ADMIN BADGE */
+.adm-badge{display:inline-block;padding:1px 7px;border-radius:20px;background:rgba(255,0,110,.2);color:var(--admin);border:1px solid rgba(255,0,110,.35);font-size:.58rem;font-weight:800;margin-left:4px}
+/* RM stat */
+.lstat.rm-stat .sv{color:var(--pink)}
+/* Skill bar */
+.skill-bar{position:absolute;bottom:44px;left:50%;transform:translateX(-50%);display:flex;gap:8px;z-index:20;pointer-events:none}
+.skill-slot{width:44px;height:44px;border-radius:10px;background:rgba(10,15,25,.88);border:2px solid rgba(255,255,255,.15);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:1.2rem;position:relative;cursor:pointer;pointer-events:all;transition:all .15s}
+.skill-slot:hover{border-color:var(--purple2);transform:scale(1.1)}
+.skill-ready{border-color:var(--purple2)!important;box-shadow:0 0 12px rgba(199,125,255,.45);animation:skillPulse 1.2s ease-in-out infinite alternate}
+@keyframes skillPulse{from{box-shadow:0 0 6px rgba(199,125,255,.3)}to{box-shadow:0 0 22px rgba(199,125,255,.75)}}
+.skill-cd{opacity:.55}
+.skill-cd-cover{position:absolute;inset:0;border-radius:8px;background:rgba(0,0,0,.65);display:flex;align-items:center;justify-content:center;font-size:.52rem;font-weight:800;color:var(--gold)}
+.skill-key-badge{position:absolute;bottom:-2px;right:-2px;background:rgba(0,0,0,.85);border-radius:4px;font-size:.48rem;font-weight:800;padding:1px 3px;color:var(--dim)}
+/* Skill FX canvas */
+#skill-fx{position:absolute;inset:0;pointer-events:none;z-index:28}
+/* Admin card highlight in palette */
+.gucard.gadmin{border-color:rgba(255,0,110,.3)!important}
+.gucard.gadmin.gsel{border-color:var(--admin)!important;box-shadow:0 0 10px rgba(255,0,110,.3)!important}
+/* Notif admin type */
+.notif.notif-admin{border-left-color:var(--admin);background:rgba(30,5,25,.97)}
 html,body{width:100%;height:100%;overflow:hidden;background:var(--bg0)}
 body{font-family:'Nunito',sans-serif;color:var(--white);user-select:none}
 button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;outline:none}
@@ -238,6 +315,8 @@ button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;outline:none}
 .mc-nightmare{background:linear-gradient(135deg,#0f0320,#200540);border-color:rgba(199,125,255,.2)}
 .mc-endless{background:linear-gradient(135deg,#000e1e,#001a30);border-color:rgba(76,201,240,.2)}
 .mc-aoe{background:linear-gradient(135deg,#200a28,#380a40);border-color:rgba(255,0,110,.3)}
+.mc-event{background:linear-gradient(135deg,#0a1a05,#0f2808);border-color:rgba(87,204,153,.35);position:relative;overflow:hidden}
+.mc-event::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(87,204,153,.06),rgba(249,199,79,.03));pointer-events:none}
 .mc-multi{background:linear-gradient(135deg,#001220,#001e35);border-color:rgba(58,134,255,.3)}
 .tag-new{background:rgba(87,204,153,.25);color:var(--green)}
 .tag-hard{background:rgba(239,35,60,.25);color:var(--red)}
@@ -577,24 +656,90 @@ button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;outline:none}
 <canvas id="bg-canvas"></canvas>
 <div class="notif-stack" id="notif-stack"></div>
 
+<!-- ══ LOGIN SCREEN ══ -->
+<div id="login" class="screen active" style="z-index:100;align-items:center;justify-content:center">
+  <div class="login-box">
+    <div class="login-logo">🚽</div>
+    <div class="login-title">TOILET TOWER DEFENSE</div>
+    <div class="login-sub">SKIBIDI UNIVERSE • FULL EDITION</div>
+    <div class="login-by">by <span>IIMPASS</span> 👑 The Pro Scripter In The World</div>
+    <div class="login-form" id="login-form">
+      <input class="login-inp" id="login-email" type="email" placeholder="Email address"/>
+      <input class="login-inp" id="login-pass" type="password" placeholder="Password"/>
+      <button class="login-btn login-btn-main" onclick="doLogin()">🎮 Sign In</button>
+      <div class="login-divider">or</div>
+      <button class="login-btn login-btn-google" onclick="openGooglePopup()">
+        <svg width="16" height="16" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.36-8.16 2.36-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
+        Continue with Google
+      </button>
+      <button class="login-btn login-btn-guest" onclick="guestLogin()">👤 Play as Guest</button>
+    </div>
+    <div class="login-switch">No account? <a onclick="showRegister()">Sign up free</a></div>
+  </div>
+</div>
+
+<!-- ══ GOOGLE POPUP ══ -->
+<div class="gp-popup" id="gp-popup">
+  <div class="gp-box">
+    <div class="gp-logo">🔐</div>
+    <div class="gp-title">Sign in with Google</div>
+    <div class="gp-sub">Choose an account to continue to<br><b>Toilet Tower Defense</b></div>
+    <div class="gp-accounts" id="gp-accounts">
+      <div class="gp-acc" onclick="googleLogin('iimpass@gmail.com','IIMPASS','#ff006e')">
+        <div class="gp-avatar" style="background:#ff006e">👑</div>
+        <div><div class="gp-uname">IIMPASS</div><div class="gp-email">iimpass@gmail.com</div></div>
+      </div>
+      <div class="gp-acc" onclick="googleLogin('progamer@gmail.com','ProGamer99','#4361ee')">
+        <div class="gp-avatar" style="background:#4361ee">🎮</div>
+        <div><div class="gp-uname">ProGamer99</div><div class="gp-email">progamer@gmail.com</div></div>
+      </div>
+      <div class="gp-acc" onclick="googleLogin('skibidifan@gmail.com','SkibidiFan','#57cc99')">
+        <div class="gp-avatar" style="background:#57cc99">🚽</div>
+        <div><div class="gp-uname">SkibidiFan</div><div class="gp-email">skibidifan@gmail.com</div></div>
+      </div>
+      <div class="gp-acc" onclick="promptCustomGoogle()">
+        <div class="gp-avatar" style="background:#718096">+</div>
+        <div><div class="gp-uname">Use another account</div><div class="gp-email">Enter email manually</div></div>
+      </div>
+    </div>
+    <button class="gp-cancel" onclick="closeGooglePopup()">Cancel</button>
+  </div>
+</div>
+
+<!-- ══ ADMIN PANEL POPUP ══ -->
+<div class="adm-panel-bg" id="adm-panel-bg">
+  <div class="adm-box">
+    <div class="adm-hdr">
+      <span class="adm-title">👑 IIMPASS ADMIN PANEL</span>
+      <button class="adm-close" onclick="closeAdmin()">✕</button>
+    </div>
+    <div class="adm-body" id="adm-body"></div>
+  </div>
+</div>
+
 <!-- ══════════════════════════════════
      LOBBY SCREEN
 ══════════════════════════════════ -->
-<div id="lobby" class="screen active">
+<div id="lobby" class="screen">
 <div id="lobby-inner">
   <!-- Top bar -->
   <div id="ltop">
     <div class="ltop-brand">🚽 TOILET TOWER DEFENSE</div>
+    <div id="ltop-user-chip" style="display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:4px 10px;cursor:pointer" onclick="void(0)">
+      <div id="ltop-avatar" style="width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;color:#fff;background:#4361ee">?</div>
+      <div><div id="ltop-uname" style="font-size:.72rem;font-weight:800">Player</div><div id="ltop-role" style="font-size:.56rem;color:var(--dim)">Member</div></div>
+    </div>
     <div class="ltop-stats">
-      <div class="lstat">💎 <span class="sv" id="lt-gems">2500</span></div>
-      <div class="lstat">🪙 <span class="sv" id="lt-coins">800</span></div>
-      <div class="lstat">⭐ Lv <span class="sv">18</span></div>
-      <div class="lstat">🏆 <span class="sv" id="lt-wins">12</span></div>
-      <div class="lstat">💀 <span class="sv" id="lt-kills">8,841</span></div>
+      <div class="lstat rm-stat">🔴 <span class="sv" id="lt-rm">0</span> RM</div>
+      <div class="lstat">💎 <span class="sv" id="lt-gems">0</span></div>
+      <div class="lstat">🪙 <span class="sv" id="lt-coins">0</span></div>
+      <div class="lstat">🏆 <span class="sv" id="lt-wins">0</span></div>
+      <div class="lstat">💀 <span class="sv" id="lt-kills">0</span></div>
     </div>
     <div class="ltop-btns">
       <button class="ltbtn lbtn-music" id="music-btn" onclick="toggleMusic()">🎵 Music: OFF</button>
-      <button class="ltbtn lbtn-notif" onclick="pushNotif('📢 No new notifications!')">🔔</button>
+      <button class="ltbtn" id="adm-lobby-btn" style="display:none;background:rgba(255,0,110,.12);color:var(--admin);border:1px solid rgba(255,0,110,.25)" onclick="openAdmin()">⚡ ADMIN</button>
+      <button class="ltbtn" style="background:rgba(239,35,60,.1);color:var(--red);border:1px solid rgba(239,35,60,.2)" onclick="doLogout()">🚪 Logout</button>
     </div>
   </div>
   <!-- Nav tabs -->
@@ -603,8 +748,10 @@ button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;outline:none}
     <button class="ltab" data-tab="play" onclick="switchTab(this)">🎮 Play</button>
     <button class="ltab" data-tab="summon" onclick="switchTab(this)">✨ Summon</button>
     <button class="ltab" data-tab="inventory" onclick="switchTab(this)">🎒 Inventory</button>
+    <button class="ltab" data-tab="rmshop" onclick="switchTab(this)">🔴 RM Shop</button>
     <button class="ltab" data-tab="multiplayer" onclick="switchTab(this)">🌐 Multiplayer</button>
     <button class="ltab" data-tab="shop" onclick="switchTab(this)">🛒 Shop</button>
+    <button class="ltab" id="adm-nav-tab" data-tab="adminpage" style="display:none;color:var(--admin)" onclick="switchTab(this)">👑 Admin</button>
   </div>
   <!-- Content -->
   <div id="lcontent">
@@ -614,9 +761,9 @@ button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;outline:none}
       <!-- Limited Event Banner -->
       <div class="event-banner" onclick="switchTab(document.querySelector('[data-tab=summon]'))">
         <div class="eb-tag">⚡ LIMITED EVENT — ENDS IN <span id="event-timer">23:14:52</span></div>
-        <div class="eb-title" style="color:var(--pink)">☃️ FROSTY SKIBIDI INVASION</div>
-        <div class="eb-sub">Exclusive Winter units only available for a limited time! Ice Titan Toilet + Frost Cameraman</div>
-        <div class="eb-emojis">❄️🚽👑</div>
+        <div class="eb-title" style="color:var(--cyan)">🌿 SKIBIDI JUNGLE INVASION</div>
+        <div class="eb-sub">Exclusive Jungle units! Vine Titan • Jungle Cameraman • Frog Speakerman. Limited boss: Jungle Toilet King!</div>
+        <div class="eb-emojis">🌿🚽🦎</div>
       </div>
       <div class="lg2">
         <div class="lcard">
@@ -743,6 +890,31 @@ button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;outline:none}
       </div>
     </div>
 
+    <!-- RM SHOP -->
+    <div class="lpanel" id="panel-rmshop">
+      <div class="lcard">
+        <div class="lcardtitle">🔴 What is RM?</div>
+        <p style="font-size:.72rem;color:var(--dim);line-height:1.8"><b style="color:var(--pink)">RM (Real Money)</b> is the premium currency. Use RM to buy <b style="color:var(--gold)">Special Crates</b> or convert to Gems at great rates!</p>
+      </div>
+      <div class="lcard">
+        <div class="lcardtitle">💎 Buy Gems with RM</div>
+        <div class="shop-grid" id="rm-gem-shop"></div>
+      </div>
+      <div class="lcard">
+        <div class="lcardtitle">🎁 Special Crates (RM only)</div>
+        <div class="shop-grid" id="rm-crate-shop"></div>
+      </div>
+    </div>
+
+    <!-- ADMIN PAGE TAB -->
+    <div class="lpanel" id="panel-adminpage">
+      <div style="background:rgba(255,0,110,.08);border:2px solid rgba(255,0,110,.3);border-radius:14px;padding:16px;margin-bottom:10px;text-align:center">
+        <div style="font-family:'Boogaloo',cursive;font-size:1.4rem;color:var(--admin);letter-spacing:2px">👑 ADMIN CONTROL CENTER</div>
+        <div style="font-size:.68rem;color:var(--dim);margin-top:4px">Restricted • IIMPASS only</div>
+      </div>
+      <div id="admin-page-content"></div>
+    </div>
+
   </div><!-- /lcontent -->
 </div><!-- /lobby-inner -->
 </div><!-- /lobby -->
@@ -854,6 +1026,7 @@ const RARITY_CFG = {
   mythic:    {label:'MYTHIC',    color:'#ffd6e7', bg:'#5a0028', chance:0.5},
   godly:     {label:'GODLY',     color:'#e9d8fd', bg:'#300d52', chance:0.1},
   exclusive: {label:'EXCLUSIVE', color:'#b794f4', bg:'linear-gradient(135deg,#2a0a50,#0a1e50)', chance:0.05},
+  admin:     {label:'ADMIN',     color:'#ff006e', bg:'linear-gradient(135deg,#3a0020,#500030)', chance:0},
 };
 
 // ── ALL UNITS ──
@@ -865,11 +1038,11 @@ const ALL_UNITS = [
   {id:'rocket_cam',       n:'Rocket Cameraman',      cat:'Camera',  e:'🚀', r:'rare',      cost:180, sell:72,  dmg:38,  spd:0.55,range:110, aoe:true, upgs:[{dmg:58,spd:0.6,rng:118,c:140},{dmg:84,spd:0.65,rng:128,c:240}]},
   {id:'mech_cam',         n:'Mech Cameraman',        cat:'Camera',  e:'🤖', r:'epic',      cost:350, sell:140, dmg:58,  spd:0.85,range:100, slow:true, upgs:[{dmg:84,spd:0.9,rng:108,c:280},{dmg:118,spd:0.95,rng:116,c:450},{dmg:160,spd:1.0,rng:126,c:640}]},
   {id:'titan_cam',        n:'Titan Cameraman',       cat:'Camera',  e:'🦾', r:'legendary', cost:800, sell:320, dmg:185, spd:0.7, range:135, upgs:[{dmg:265,spd:0.75,rng:146,c:640},{dmg:370,spd:0.8,rng:158,c:1000},{dmg:500,spd:0.85,rng:170,c:1500}]},
-  {id:'jetpack_cam',      n:'Jetpack Cameraman',     cat:'Camera',  e:'🪂', r:'exclusive', cost:0,   sell:0,   dmg:290, spd:1.2, range:122, upgs:[{dmg:400,spd:1.3,rng:132,c:800},{dmg:540,spd:1.4,rng:142,c:1200}]},
-  {id:'corrupted_cam',    n:'Corrupted Cameraman',   cat:'Camera',  e:'💀', r:'exclusive', cost:0,   sell:0,   dmg:420, spd:1.4, range:116, upgs:[{dmg:580,spd:1.5,rng:122,c:1000},{dmg:760,spd:1.6,rng:132,c:1600}]},
+  {id:'jetpack_cam',      n:'Jetpack Cameraman',     cat:'Camera',  e:'🪂', r:'exclusive', cost:500, sell:200, dmg:290, spd:1.2, range:122, upgs:[{dmg:400,spd:1.3,rng:132,c:800},{dmg:540,spd:1.4,rng:142,c:1200}]},
+  {id:'corrupted_cam',    n:'Corrupted Cameraman',   cat:'Camera',  e:'💀', r:'exclusive', cost:600, sell:240, dmg:420, spd:1.4, range:116, upgs:[{dmg:580,spd:1.5,rng:122,c:1000},{dmg:760,spd:1.6,rng:132,c:1600}]},
   {id:'upg_titan_cam',    n:'Upgraded Titan Cam',    cat:'Camera',  e:'⚡', r:'godly',     cost:0,   sell:0,   dmg:620, spd:0.9, range:162, aoe:true, upgs:[{dmg:880,spd:1.0,rng:178,c:2000},{dmg:1150,spd:1.1,rng:192,c:3200}]},
-  {id:'sinister_cam',     n:'Sinister Cameraman',    cat:'Camera',  e:'😈', r:'exclusive', cost:0,   sell:0,   dmg:320, spd:1.1, range:132, upgs:[{dmg:450,spd:1.2,rng:142,c:900}]},
-  {id:'frost_cam',        n:'Frost Cameraman',       cat:'Camera',  e:'❄️', r:'exclusive', cost:0,   sell:0,   dmg:250, spd:1.0, range:120, freeze:true, event:'winter', upgs:[{dmg:360,spd:1.1,rng:130,c:700}]},
+  {id:'sinister_cam',     n:'Sinister Cameraman',    cat:'Camera',  e:'😈', r:'exclusive', cost:450, sell:180, dmg:320, spd:1.1, range:132, upgs:[{dmg:450,spd:1.2,rng:142,c:900}]},
+  {id:'frost_cam',        n:'Frost Cameraman',       cat:'Camera',  e:'❄️', r:'exclusive', cost:400, sell:160, dmg:250, spd:1.0, range:120, freeze:true, event:'winter', upgs:[{dmg:360,spd:1.1,rng:130,c:700}]},
   // SPEAKERS
   {id:'speakerman',       n:'Speakerman',            cat:'Speaker', e:'🔊', r:'basic',     cost:60,  sell:24,  dmg:7,   spd:0.95,range:70,  upgs:[{dmg:11,spd:1.0,rng:75,c:50},{dmg:16,spd:1.1,rng:80,c:85},{dmg:23,spd:1.2,rng:88,c:130}]},
   {id:'large_speaker',    n:'Large Speakerman',      cat:'Speaker', e:'📣', r:'uncommon',  cost:110, sell:44,  dmg:15,  spd:0.9, range:82,  upgs:[{dmg:22,spd:0.95,rng:88,c:88},{dmg:32,spd:1.0,rng:96,c:150},{dmg:46,spd:1.05,rng:106,c:220}]},
@@ -891,7 +1064,15 @@ const ALL_UNITS = [
   {id:'medic_cam',        n:'Medic Cameraman',       cat:'Camera',  e:'🏥', r:'rare',      cost:150, sell:60,  dmg:5,   spd:1.0, range:80,  heal:true, upgs:[{dmg:7,spd:1.1,rng:88,c:120}]},
   {id:'engineer_cam',     n:'Engineer Cameraman',    cat:'Camera',  e:'🛠️', r:'epic',      cost:280, sell:112, dmg:32,  spd:0.5, range:96,  spawner:true, upgs:[{dmg:48,spd:0.55,rng:102,c:224}]},
   // WINTER EVENT
-  {id:'ice_titan',        n:'Ice Titan Toilet Fighter',cat:'Camera',e:'🧊', r:'exclusive', cost:0,   sell:0,   dmg:480, spd:0.8, range:145, freeze:true, aoe:true, event:'winter', upgs:[{dmg:680,spd:0.85,rng:158,c:1500}]},
+  {id:'ice_titan',        n:'Ice Titan Toilet Fighter',cat:'Camera',e:'🧊', r:'exclusive', cost:600, sell:240, dmg:480, spd:0.8, range:145, freeze:true, aoe:true, event:'winter', upgs:[{dmg:680,spd:0.85,rng:158,c:1500}]},
+  // JUNGLE EVENT UNITS
+  {id:'jungle_cam',  n:'Jungle Cameraman',  cat:'Camera',  e:'🌿', r:'exclusive', cost:500, sell:200, dmg:200, spd:1.1, range:118, event:'jungle', upgs:[{dmg:290,spd:1.2,rng:128,c:650}], skill:'freeze_all'},
+  {id:'vine_titan',  n:'Vine Titan',         cat:'Camera',  e:'🦎', r:'exclusive', cost:800, sell:320, dmg:480, spd:0.8, range:145, freeze:true, aoe:true, event:'jungle', upgs:[{dmg:680,spd:0.85,rng:158,c:1500}], skill:'freeze_all'},
+  {id:'frog_spkr',   n:'Frog Speakerman',    cat:'Speaker', e:'🐸', r:'exclusive', cost:300, sell:120, dmg:160, spd:1.0, range:110, slow:true, event:'jungle', upgs:[{dmg:240,spd:1.1,rng:120,c:600}]},
+  // ADMIN EXCLUSIVE UNITS (invisible to non-admins)
+  {id:'admin_god',   n:'GOD MODE Cameraman', cat:'Admin',   e:'👑', r:'admin', cost:0, sell:0, dmg:9999, spd:3.0, range:200, aoe:true, adminOnly:true, admin:true, upgs:[], skill:'admin_wipe', anim:'admin'},
+  {id:'admin_nuke',  n:'Nuke Launcher',      cat:'Admin',   e:'💣', r:'admin', cost:0, sell:0, dmg:5000, spd:1.5, range:180, aoe:true, adminOnly:true, admin:true, upgs:[], skill:'admin_gold', anim:'nuke'},
+  {id:'admin_speed', n:'Speed Demon',         cat:'Admin',   e:'⚡', r:'admin', cost:0, sell:0, dmg:2000, spd:8.0, range:120, adminOnly:true, admin:true, upgs:[], skill:'coin_rain', anim:'lightning'},
 ];
 
 // ── ENEMY DEFS ──
@@ -908,6 +1089,10 @@ const ENEMY_DEFS = [
   {id:'glass_t',     n:'Glass Toilet',       e:'🔬', hp:125,  spd:0.85, rew:12,  col:'#e3f2fd'},
   {id:'large_titan', n:'Large Titan Toilet', e:'🏛️', hp:5500, spd:0.19, rew:210, col:'#ff8a65', boss:true},
   {id:'ice_toilet',  n:'Ice Toilet',         e:'🧊', hp:300,  spd:0.5,  rew:22,  col:'#b3e5fc'},
+  // JUNGLE EVENT ENEMIES
+  {id:'vine_t',     n:'Vine Toilet',          e:'🌿', hp:280,  spd:0.5,  rew:22,  col:'#c8e6c9', event:true},
+  {id:'frog_t',     n:'Frog Toilet',           e:'🐸', hp:180,  spd:0.8,  rew:16,  col:'#a5d6a7', event:true},
+  {id:'jungle_boss',n:'Jungle Toilet King',    e:'🦎', hp:3000, spd:0.22, rew:150, col:'#69f0ae', boss:true, event:true},
 ];
 
 // ── SUMMON BANNERS ──
@@ -924,15 +1109,15 @@ const BANNERS = [
    rates:{legendary:50,mythic:30,godly:15,exclusive:5},
    pool:['titan_cam','dark_speaker','titan_speaker','titan_tvman','titan_clock','upg_titan_cam','upg_titan_speak','titan_cinemaman','jetpack_cam','corrupted_cam'],
    pity:30},
-  {id:'event',   name:'❄️ Winter Event Crate',emoji:'❄️',color:'smb-event',cost:150,multi:1200,
+  {id:'event',   name:'🌿 Jungle Event Crate',emoji:'🌿',color:'smb-event',cost:150,multi:1200,
    rates:{epic:35,legendary:25,exclusive:30,mythic:10},
-   pool:['frost_cam','ice_titan','corrupted_cam','titan_cam','dark_speaker'],
+   pool:['frost_cam','ice_titan','corrupted_cam','titan_cam','dark_speaker','jungle_cam','vine_titan','frog_spkr'],
    pity:20, isEvent:true},
 ];
 
 // ── WAVE BUILDER ──
 function buildWave(wn, mode) {
-  const scl = {easy:0.8,medium:1.0,hard:1.4,nightmare:2.0,aoe:1.2,multiplayer:1.0,endless:1+wn*0.1}[mode]||1;
+  const scl = {easy:0.8,medium:1.0,hard:1.4,nightmare:2.0,aoe:1.2,multiplayer:1.0,event:1.1,endless:1+wn*0.1}[mode]||1;
   const hs = scl*(1+wn*0.15);
   const W = [];
   const push = (id,n,bd=0,gap=850,mpBonus=1)=>{
@@ -950,8 +1135,17 @@ function buildWave(wn, mode) {
   else if(wn<=22){push('titan_t',2+Math.floor(wn/8),0,3500,mb);push('glass_t',9,500,480,mb);push('speaker_t',7,1000,680,mb);push('large',5,2000,1100,mb)}
   else if(wn<=35){push('titan_t',3+Math.floor(wn/10),0,3000,mb);push('large_titan',1,1000,0,mb);push('flying',12,500,320,mb);push('camera_t',12,200,280,mb)}
   else{push('large_titan',2+Math.floor(wn/18),0,4000,mb);push('titan_t',5,2000,1800,mb);push('flying',18,300,220,mb);push('glass_t',14,100,280,mb)}
+  // EVENT mode: jungle enemies
+  if(mode==='event'){
+    W.length=0;// clear normal enemies and replace with jungle
+    if(wn<=4){push('vine_t',6+wn*2,0,800,mb);push('frog_t',wn*2,500,700,mb);}
+    else if(wn<=8){push('vine_t',8,0,650,mb);push('frog_t',6,500,600,mb);push('large',2,3500,1800,mb);}
+    else if(wn<=14){push('vine_t',10,0,550,mb);push('frog_t',8,300,520,mb);push('jungle_boss',1,2000,0,mb);}
+    else if(wn<=18){push('jungle_boss',2+Math.floor(wn/8),0,3500,mb);push('vine_t',10,500,450,mb);push('frog_t',8,200,380,mb);}
+    else{push('jungle_boss',4,0,3000,mb);push('vine_t',14,500,380,mb);push('frog_t',12,200,330,mb);}
+  }
   // AOE mode: fewer but tankier enemies
-  if(mode==='aoe') W.forEach(e=>{e.hp=Math.round(e.hp*1.6);e.maxHp=e.hp});
+  if(mode==='aoe') W.forEach(e=>{e.hp=Math.round(e.hp*1.6);e.maxHp=e.hp;});
   return W.sort((a,b)=>a.delay-b.delay);
 }
 
@@ -974,20 +1168,153 @@ let GS = {
 /* ════════════════════════════════════════════════════════════════
    PLAYER SAVE
 ════════════════════════════════════════════════════════════════ */
-const PS = {
-  gems:2500, coins:800, wins:12, kills:8841,
-  selectedMode:'easy',
-  loadout:[null,null,null,null,null],
-  inventory:{},   // id -> count
-  pity:{main:0,exclusive:0,titan:0,event:0},
-  pullHistory:[],
-  unlockedUnits: new Set([
-    'camerawoman','cameraman','speakerman','tvman','drillman','clockman',
-    'large_cam','large_speaker','large_tvman','medic_cam','mech_cam','speakerman',
-  ]),
+// ── ADMIN LOG ──
+const ADMIN_LOG = [];
+function adminLog(msg, type='normal') {
+  const t = new Date().toLocaleTimeString();
+  ADMIN_LOG.unshift({msg:`[${t}] ${msg}`, type});
+  if (ADMIN_LOG.length > 60) ADMIN_LOG.pop();
+}
+
+// ── AUTH ──
+const ADMIN_EMAILS = ['iimpass@gmail.com','iimpass','IIMPASS'];
+let PS = null;
+
+function defaultPS(username, email='') {
+  return {
+    username, email,
+    isAdmin: ADMIN_EMAILS.includes(email.toLowerCase()) || ADMIN_EMAILS.includes(username),
+    rm: 0, gems: 500, coins: 800, wins: 0, kills: 0,
+    selectedMode: 'easy',
+    loadout: [null,null,null,null,null],
+    inventory: {},
+    pity: {main:0, exclusive:0, titan:0, event:0},
+    pullHistory: [],
+    unlockedUnits: new Set([
+      'camerawoman','cameraman','speakerman','tvman','drillman','clockman',
+      'large_cam','large_speaker','large_tvman','medic_cam',
+    ]),
+  };
+}
+
+function savePS() {
+  if (!PS) return;
+  try {
+    const save = {...PS, unlockedUnits: [...PS.unlockedUnits]};
+    localStorage.setItem('ttd_ps_'+PS.username, JSON.stringify(save));
+  } catch(e) {}
+}
+
+function loadPS(username) {
+  try {
+    const raw = localStorage.getItem('ttd_ps_'+username);
+    if (raw) {
+      const d = JSON.parse(raw);
+      d.unlockedUnits = new Set(d.unlockedUnits||[]);
+      if (!d.rm) d.rm = 0;
+      return d;
+    }
+  } catch(e) {}
+  return null;
+}
+
+function giveAdminUnits() {
+  ['admin_god','admin_nuke','admin_speed'].forEach(id => {
+    PS.unlockedUnits.add(id);
+    PS.inventory[id] = (PS.inventory[id]||0) + 1;
+  });
+}
+
+// ── RM PACKS ──
+const RM_PACKS = [
+  {rm:1,  gems:100,  bonus:'',            name:'Starter Pack', e:'💎'},
+  {rm:5,  gems:600,  bonus:'+100 BONUS',  name:'Value Pack',   e:'💎'},
+  {rm:10, gems:1400, bonus:'+400 BONUS',  name:'Big Pack',     e:'💠'},
+  {rm:25, gems:4000, bonus:'+1500 BONUS', name:'Mega Pack',    e:'💠'},
+  {rm:50, gems:9500, bonus:'+3500 BONUS', name:'Ultra Pack',   e:'👑'},
+];
+
+// ── SPECIAL CRATES (RM) ──
+const SPECIAL_CRATES = [
+  {id:'rm_legend', name:'Legendary Guarantee', e:'🌟', rm:5,
+   desc:'100% guaranteed Legendary+ unit.',
+   rates:{legendary:70,mythic:20,godly:8,exclusive:2},
+   pool:['titan_cam','dark_speaker','titan_speaker','titan_tvman','titan_clock','upg_titan_cam','upg_titan_speak','titan_cinemaman','jetpack_cam','corrupted_cam','sinister_cam']},
+  {id:'rm_exclusive', name:'Exclusive EX Crate', e:'💎', rm:15,
+   desc:'50% Exclusive rate. 100% Legendary+.',
+   rates:{legendary:30,mythic:20,godly:10,exclusive:40},
+   pool:['jetpack_cam','corrupted_cam','sinister_cam','upg_titan_cam','upg_titan_speak','titan_cinemaman','frost_cam','jungle_cam','vine_titan','frog_spkr']},
+  {id:'rm_event', name:'🌿 Event Super Crate', e:'🌿', rm:10,
+   desc:'Event-only exclusive units! 80% Exclusive!',
+   rates:{exclusive:80,godly:15,mythic:5},
+   pool:['vine_titan','jungle_cam','frost_cam','frog_spkr']},
+  {id:'rm_godly', name:'Godly Crate', e:'✨', rm:50,
+   desc:'50% Godly, 30% Mythic, 20% Exclusive.',
+   rates:{godly:50,mythic:30,exclusive:20},
+   pool:['upg_titan_cam','upg_titan_speak','titan_cinemaman','vine_titan','corrupted_cam']},
+];
+
+// ── SKILLS ──
+const SKILLS = {
+  orbital_strike: { name:'Orbital Strike', icon:'☄️', key:'Q', cd:30, color:'#f3722c',
+    desc:'Meteor strike on strongest enemy. 800 AOE damage.',
+    activate(state) {
+      const boss=state.enemies.reduce((b,e)=>(!b||e.hp>b.hp)?e:b,null);
+      if(!boss){showToast('No enemies!');return false;}
+      (state.skillFX=state.skillFX||[]).push({type:'meteor',x:boss.x,y:boss.y-200,tx:boss.x,ty:boss.y,life:60,maxLife:60});
+      setTimeout(()=>{
+        state.enemies.filter(e=>Math.hypot(e.x-boss.x,e.y-boss.y)<95).forEach(e=>{
+          e.hp-=800;spawnParticles(boss.x,boss.y,'#f3722c',14,'death');if(e.hp<=0)killEnemy(e,state);
+        });updateGameHUD();
+      },600);return true;
+    }
+  },
+  freeze_all: { name:'Blizzard', icon:'❄️', key:'W', cd:45, color:'#4cc9f0',
+    desc:'Freezes ALL enemies for 3 seconds.',
+    activate(state) {
+      state.enemies.forEach(e=>{e.frozenTime=3000;spawnParticles(e.x,e.y,'#4cc9f0',5,'freeze');});
+      (state.skillFX=state.skillFX||[]).push({type:'blizzard',x:0,y:0,life:90,maxLife:90});return true;
+    }
+  },
+  coin_rain: { name:'Coin Rain', icon:'🪙', key:'E', cd:60, color:'#f9c74f',
+    desc:'+200 bonus coins instantly.',
+    activate(state) {
+      state.coins+=200;updateGameHUD();
+      for(let i=0;i<10;i++)spawnParticles(GW*Math.random(),GH*0.3,'#f9c74f',3,'coin');return true;
+    }
+  },
+  titan_call: { name:'Titan Call', icon:'🦾', key:'R', cd:90, color:'#f9c74f',
+    desc:'Summons a Titan ally for 18 seconds.',
+    activate(state) {
+      (state.tempTowers=state.tempTowers||[]).push({
+        defId:'titan_temp',e:'🦾',x:GW*.5,y:GH*.42,
+        dmg:300,spd:.85,range:155,aoe:true,slow:false,freeze:false,
+        col:'#f9c74f',level:0,maxLevel:0,upgs:[],kills:0,totalDmg:0,
+        sellVal:0,fireTimer:0,target:null,n:'Titan Ally',
+        temp:true,tempLife:18000,animTime:0,admin:false,isBot:false,
+      });
+      spawnParticles(GW*.5,GH*.42,'#f9c74f',25,'death');return true;
+    }
+  },
+  admin_wipe: { name:'Admin Wipe', icon:'⚡', key:'Q', cd:5, color:'#ff006e', adminOnly:true,
+    desc:'[ADMIN] Kill ALL enemies instantly.',
+    activate(state) {
+      const cnt=state.enemies.length;
+      state.enemies.forEach(e=>spawnParticles(e.x,e.y,'#ff006e',12,'death'));
+      state.coins+=cnt*12;state.kills+=cnt;state.enemies=[];
+      updateGameHUD();pushNotif('⚡ Admin Wipe: '+cnt+' enemies!','admin');return true;
+    }
+  },
+  admin_gold: { name:'Gold Flood', icon:'💰', key:'W', cd:10, color:'#f9c74f', adminOnly:true,
+    desc:'[ADMIN] +2000 coins instantly.',
+    activate(state) {
+      state.coins+=2000;updateGameHUD();
+      for(let i=0;i<18;i++)spawnParticles(GW*Math.random(),GH*Math.random(),'#f9c74f',3,'coin');return true;
+    }
+  },
 };
 
-const MODE_WAVES = {easy:15,medium:25,hard:35,nightmare:50,endless:999,aoe:20,multiplayer:20};
+const MODE_WAVES = {easy:15,medium:25,hard:35,nightmare:50,endless:999,aoe:20,event:20,multiplayer:20};
 
 /* ════════════════════════════════════════════════════════════════
    ANIMATED BACKGROUND CANVAS
@@ -1127,23 +1454,146 @@ function playSFX(type){
 /* ════════════════════════════════════════════════════════════════
    LOBBY INIT
 ════════════════════════════════════════════════════════════════ */
-function initLobby(){
+/* ══ AUTH FUNCTIONS ══ */
+function doLogin(){
+  const email=(document.getElementById('login-email').value||'').trim();
+  const pass=(document.getElementById('login-pass').value||'').trim();
+  if(!email){pushNotif('Enter your email!','red');return;}
+  const uname=email.split('@')[0];
+  let saved=loadPS(uname)||defaultPS(uname,email);
+  saved.email=email;
+  saved.isAdmin=ADMIN_EMAILS.includes(email.toLowerCase())||ADMIN_EMAILS.includes(uname);
+  PS=saved; if(PS.isAdmin) giveAdminUnits();
+  startLobby(); adminLog('Login: '+uname,'lg'); pushNotif('Welcome back, '+uname+'!','green');
+}
+function googleLogin(email,displayName,color){
+  closeGooglePopup();
+  let saved=loadPS(displayName)||defaultPS(displayName,email);
+  saved.email=email; saved.username=displayName;
+  saved.isAdmin=ADMIN_EMAILS.includes(email.toLowerCase())||ADMIN_EMAILS.includes(displayName);
+  PS=saved; if(PS.isAdmin) giveAdminUnits();
+  startLobby(); adminLog('Google login: '+displayName,'lg'); pushNotif('🔐 Signed in as '+displayName+'!','green');
+}
+function guestLogin(){
+  PS=defaultPS('Guest','guest@ttd.local');
+  PS.gems=200; PS.coins=300;
+  startLobby(); pushNotif('👤 Playing as Guest — progress not saved!');
+}
+function showRegister(){
+  document.getElementById('login-form').innerHTML=`
+    <input class="login-inp" id="reg-user" placeholder="Username"/>
+    <input class="login-inp" id="reg-email" type="email" placeholder="Email"/>
+    <input class="login-inp" id="reg-pass" type="password" placeholder="Password (6+ chars)"/>
+    <button class="login-btn login-btn-main" onclick="doRegister()">✅ Create Account</button>
+    <button class="login-btn login-btn-guest" onclick="resetLoginForm()">← Back</button>`;
+}
+function doRegister(){
+  const u=(document.getElementById('reg-user').value||'').trim();
+  const e=(document.getElementById('reg-email').value||'').trim();
+  const p=(document.getElementById('reg-pass').value||'').trim();
+  if(!u||!e){pushNotif('Fill all fields!','red');return;}
+  if(p.length<6){pushNotif('Password must be 6+ chars!','red');return;}
+  PS=defaultPS(u,e); PS.isAdmin=ADMIN_EMAILS.includes(e.toLowerCase())||ADMIN_EMAILS.includes(u);
+  if(PS.isAdmin) giveAdminUnits();
+  savePS(); startLobby(); pushNotif('Account created! Welcome, '+u+'!','green');
+}
+function resetLoginForm(){
+  document.getElementById('login-form').innerHTML=`
+    <input class="login-inp" id="login-email" type="email" placeholder="Email address"/>
+    <input class="login-inp" id="login-pass" type="password" placeholder="Password"/>
+    <button class="login-btn login-btn-main" onclick="doLogin()">🎮 Sign In</button>
+    <div class="login-divider">or</div>
+    <button class="login-btn login-btn-google" onclick="openGooglePopup()"><svg width="16" height="16" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.18 1.48-4.97 2.36-8.16 2.36-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>Continue with Google</button>
+    <button class="login-btn login-btn-guest" onclick="guestLogin()">👤 Play as Guest</button>`;
+}
+function doLogout(){savePS();PS=null;cancelAnimationFrame(gameRAF);gameRAF=null;stopMusic();switchScreen('login');}
+function openGooglePopup(){document.getElementById('gp-popup').classList.add('on');}
+function closeGooglePopup(){document.getElementById('gp-popup').classList.remove('on');}
+function promptCustomGoogle(){closeGooglePopup();const e=prompt('Enter your Google email:');if(e)googleLogin(e,e.split('@')[0],'#4361ee');}
+
+function startLobby(){
+  savePS();
+  switchScreen('lobby');
   renderLobbyStats();
-  buildHomePage();
-  buildModeGrid();
-  buildLoadout();
-  buildSummonBanners();
-  buildInventory();
-  buildMPRooms();
-  buildShop();
-  buildDropRateInfo();
+  buildHomePage(); buildModeGrid(); buildLoadout();
+  buildSummonBanners(); buildInventory();
+  buildMPRooms(); buildShop(); buildRMShop();
+  if(typeof buildDropRateInfo==='function') buildDropRateInfo();
+  // Admin visibility
+  document.getElementById('adm-lobby-btn').style.display=PS.isAdmin?'':'none';
+  document.getElementById('adm-nav-tab').style.display=PS.isAdmin?'':'none';
+  if(PS.isAdmin){buildAdminContent();buildAdminPageContent();}
 }
 
+function initLobby(){ startLobby(); }
+
 function renderLobbyStats(){
-  document.getElementById('lt-gems').textContent=PS.gems.toLocaleString();
-  document.getElementById('lt-coins').textContent=PS.coins.toLocaleString();
-  document.getElementById('lt-wins').textContent=PS.wins;
-  document.getElementById('lt-kills').textContent=PS.kills.toLocaleString();
+  if(!PS) return;
+  document.getElementById('lt-rm').textContent=PS.rm||0;
+  document.getElementById('lt-gems').textContent=(PS.gems||0).toLocaleString();
+  document.getElementById('lt-coins').textContent=(PS.coins||0).toLocaleString();
+  document.getElementById('lt-wins').textContent=PS.wins||0;
+  document.getElementById('lt-kills').textContent=(PS.kills||0).toLocaleString();
+  // User chip
+  const colors=['#4361ee','#f9c74f','#57cc99','#ef233c','#ff006e','#00b4d8','#9b59b6'];
+  const col=colors[PS.username.length%colors.length];
+  const av=document.getElementById('ltop-avatar');
+  if(av){av.style.background=col;av.textContent=PS.isAdmin?'👑':PS.username.charAt(0).toUpperCase();}
+  const un=document.getElementById('ltop-uname');if(un)un.textContent=PS.username;
+  const ur=document.getElementById('ltop-role');
+  if(ur){ur.textContent=PS.isAdmin?'⚡ ADMIN':'Member';ur.style.color=PS.isAdmin?'var(--admin)':'var(--dim)';}
+}
+
+/* ══ RM SHOP ══ */
+function buildRMShop(){
+  const gemHtml=RM_PACKS.map(p=>`
+    <div class="shopcard" onclick="buyRMPack(${p.rm},${p.gems},'${p.name}')">
+      <span class="sc-e">${p.e}</span>
+      <div class="sc-n">${p.name}</div>
+      <div class="sc-d">${p.gems.toLocaleString()} 💎${p.bonus?' '+p.bonus:''}</div>
+      <button class="sc-b">💳 ${p.rm} RM</button>
+    </div>`).join('');
+  document.getElementById('rm-gem-shop').innerHTML=gemHtml;
+  const crateHtml=SPECIAL_CRATES.map(c=>`
+    <div class="shopcard" onclick="doSummonRM('${c.id}')">
+      <span class="sc-e">${c.e}</span>
+      <div class="sc-n">${c.name}</div>
+      <div class="sc-d">${c.desc}</div>
+      <button class="sc-b" style="background:linear-gradient(135deg,var(--admin),var(--purple))">🔴 ${c.rm} RM</button>
+    </div>`).join('');
+  document.getElementById('rm-crate-shop').innerHTML=crateHtml;
+}
+function buyRMPack(rm,gems,name){
+  if(PS.rm<rm){
+    // Simulate purchase
+    const add=parseInt(prompt('Simulate RM purchase: how many RM to add? (1-100)',''+rm*2)||0);
+    if(add>0&&add<=100){PS.rm+=add;renderLobbyStats();pushNotif('+'+add+' RM added!','green');adminLog(PS.username+' +'+add+' RM','lg');}
+    return;
+  }
+  PS.rm-=rm; PS.gems+=gems; renderLobbyStats(); savePS();
+  pushNotif('💎 Got '+gems.toLocaleString()+' Gems for '+rm+' RM!','green');
+  adminLog(PS.username+': -'+rm+'RM +'+gems+'gems','lg');
+}
+function doSummonRM(crateId){
+  const c=SPECIAL_CRATES.find(x=>x.id===crateId);if(!c)return;
+  if(PS.rm<c.rm){pushNotif('Need '+c.rm+' 🔴 RM! You have '+PS.rm+'.','red');switchTab(document.querySelector('[data-tab=rmshop]'));return;}
+  PS.rm-=c.rm; renderLobbyStats(); savePS();
+  const u=rollFromCrate(c);
+  if(!u){pushNotif('No valid unit found!','red');return;}
+  PS.unlockedUnits.add(u.id); PS.inventory[u.id]=(PS.inventory[u.id]||0)+1;
+  PS.pullHistory.unshift(u); if(PS.pullHistory.length>50)PS.pullHistory.pop();
+  buildInventory(); playSFX('summon'); showSummonResult(u,null); savePS();
+  adminLog(PS.username+' RM summon: '+u.n+' from '+c.name,'lg');
+}
+function rollFromCrate(c){
+  const total=Object.values(c.rates).reduce((s,v)=>s+v,0);
+  let r=Math.random()*total;
+  for(const[k,v]of Object.entries(c.rates)){r-=v;if(r<=0){
+    const pool=(c.pool||[]).map(id=>ALL_UNITS.find(u=>u.id===id)).filter(u=>u&&u.r===k);
+    const all=(c.pool||[]).map(id=>ALL_UNITS.find(u=>u.id===id)).filter(Boolean);
+    return (pool.length?pool:all)[Math.floor(Math.random()*(pool.length||all.length))]||all[0];
+  }}
+  return null;
 }
 
 /* ─ HOME ─ */
@@ -1201,6 +1651,7 @@ const MODE_DEFS=[
   {id:'endless',   n:'Endless',    e:'♾️', d:'Infinite scaling waves. How far can you go?',                                w:'∞ Waves',  tag:'',           cls:'mc-easy'},
   {id:'aoe',       n:'AOE Mode',   e:'💥', d:'ALL units deal area splash damage! Chaos guaranteed. New mode!',             w:'20 Waves', tag:'new',        cls:'mc-aoe'},
   {id:'multiplayer',n:'Co-op',     e:'🌐', d:'Play with up to 4 friends! Shared lives, individual coins, scaled HP.',      w:'20 Waves', tag:'multiplayer',cls:'mc-multi'},
+  {id:'event',      n:'🌿 Jungle Invasion',e:'🦎',d:'LIMITED EVENT! Jungle enemies, exclusive boss, bonus gems & event units!',w:'20 Waves', tag:'event',      cls:'mc-event'},
 ];
 function buildModeGrid(){
   document.getElementById('mode-grid').innerHTML=MODE_DEFS.map(m=>`
@@ -1457,7 +1908,9 @@ function renderInvDetail(u){
       ${u.spawner?'🤖 Spawns helper units<br>':''}
       ${u.event?`⚡ Event: ${u.event} exclusive<br>`:''}
     </div>
-    ${u.cost>0?`<div style="font-size:.65rem;color:var(--dim);margin-top:4px">Place cost: 🪙${u.cost} | Sell: 🪙${u.sell}</div>`:'<div style="font-size:.65rem;color:var(--gold);margin-top:4px">⭐ Obtained via Summon only</div>'}
+    ${u.skill&&SKILLS[u.skill]?`<div style="background:rgba(199,125,255,.1);border:1px solid rgba(199,125,255,.25);border-radius:8px;padding:6px;margin-top:6px;font-size:.63rem"><b style="color:var(--purple2)">${SKILLS[u.skill].icon} ${SKILLS[u.skill].name}</b> [${SKILLS[u.skill].key}]<br><span style="color:var(--dim)">${SKILLS[u.skill].desc}</span><br><span style="color:var(--gold)">Cooldown: ${SKILLS[u.skill].cd}s</span></div>`:''}
+    ${u.adminOnly?'<div style="font-size:.63rem;color:var(--admin);margin-top:5px;font-weight:800">⚡ ADMIN EXCLUSIVE UNIT</div>':''}
+    ${u.r==='exclusive'?`<div style="font-size:.65rem;color:var(--purple2);margin-top:4px;font-weight:800">💜 EXCLUSIVE — Place cost: 🪙${u.cost} | Sell: 🪙${u.sell}</div>`:u.r==='admin'?'<div style="font-size:.65rem;color:var(--admin);margin-top:4px;font-weight:800">👑 ADMIN — Free to place</div>':u.cost>0?`<div style="font-size:.65rem;color:var(--dim);margin-top:4px">Place cost: 🪙${u.cost} | Sell: 🪙${u.sell}</div>`:'<div style="font-size:.65rem;color:var(--gold);margin-top:4px">⭐ Obtained via Summon only</div>'}
     <button class="iequip-btn ${eq?'iequip-off':'iequip-on'}" onclick="${eq?`removeFromLoadout('${u.id}')`:`addToLoadout('${u.id}')`}">
       ${eq?'🔴 Remove from Loadout':'🟢 Add to Loadout'}
     </button>`;
@@ -1471,6 +1924,7 @@ function removeFromLoadout(id){
 /* ─ MULTIPLAYER ─ */
 const FAKE_ROOMS=[
   {n:'SkibidiDefenders',mode:'hard',players:2,max:4,status:'open',host:'SkibidiKing99'},
+  {n:'🌿 JungleInvasion',mode:'event',players:2,max:4,status:'open',host:'EventPro'},
   {n:'TitanCo-op',mode:'nightmare',players:3,max:3,status:'full',host:'TitanPro'},
   {n:'EasyFarm',mode:'easy',players:1,max:4,status:'open',host:'NewPlayer123'},
   {n:'AOEMadness',mode:'aoe',players:2,max:4,status:'in-progress',host:'AOEGod'},
@@ -1548,16 +2002,125 @@ function switchTab(el){
   const id='panel-'+el.dataset.tab;
   const panel=document.getElementById(id);
   if(panel) panel.classList.add('on');
-  if(el.dataset.tab==='summon') updatePullHistory();
+  if(el.dataset.tab==='summon'){updatePullHistory();buildSummonBanners();}
+  if(el.dataset.tab==='inventory') buildInventory();
+  if(el.dataset.tab==='rmshop') buildRMShop();
+  if(el.dataset.tab==='adminpage'&&PS.isAdmin) buildAdminPageContent();
 }
 
 /* ─ NOTIF ─ */
-function pushNotif(msg){
+function pushNotif(msg, type=''){
   const stack=document.getElementById('notif-stack');
   const d=document.createElement('div');
-  d.className='notif';d.textContent=msg;
+  d.className='notif'+(type==='red'?' notif-red':type==='green'?' notif-green':type==='blue'?' notif-blue':type==='admin'?' notif-admin':'');
+  d.textContent=msg;
   stack.appendChild(d);
-  setTimeout(()=>d.remove(),3000);
+  setTimeout(()=>{try{d.style.height=d.offsetHeight+'px';d.remove();}catch(e){}},3200);
+}
+
+/* ══ ADMIN PANEL FUNCTIONS ══ */
+function openAdmin(){
+  if(!PS||!PS.isAdmin){pushNotif('Access denied!','red');return;}
+  buildAdminContent();
+  document.getElementById('adm-panel-bg').classList.add('on');
+}
+function closeAdmin(){document.getElementById('adm-panel-bg').classList.remove('on');}
+function buildAdminContent(){
+  const el=document.getElementById('adm-body');if(!el)return;
+  el.innerHTML=adminPanelHTML(); refreshAdminLog('adm-log'); refreshAdminUsers('adm-users');
+}
+function buildAdminPageContent(){
+  const el=document.getElementById('admin-page-content');if(!el)return;
+  el.innerHTML=adminPanelHTML(); refreshAdminLog('adm-log2'); refreshAdminUsers('adm-users2');
+  // rename ids to avoid dupe
+  el.querySelectorAll('[id]').forEach(e=>{if(!e.id.endsWith('2'))e.id=e.id+'2';});
+}
+function adminPanelHTML(){
+  return `<div class="adm-sec"><h3>👤 Give Resources</h3>
+    <div class="adm-grid">
+      <div><div style="font-size:.65rem;color:var(--dim);margin-bottom:4px">Username</div><input class="adm-inp" id="adm-target" value="${PS.username}" placeholder="Username"/></div>
+      <div><div style="font-size:.65rem;color:var(--dim);margin-bottom:4px">Amount</div><input class="adm-inp" id="adm-amount" value="1000" type="number"/></div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:8px">
+      <button class="adm-btn adm-btn-gold" onclick="adminGive('gems')">💎 Give Gems</button>
+      <button class="adm-btn adm-btn-green" onclick="adminGive('coins')">🪙 Give Coins</button>
+      <button class="adm-btn adm-btn-pink" onclick="adminGive('rm')">🔴 Give RM</button>
+      <button class="adm-btn adm-btn-blue" onclick="adminGive('unit')">👑 Give Admin Unit</button>
+    </div>
+  </div>
+  <div class="adm-sec"><h3>🎮 Game Control</h3>
+    <div style="display:flex;gap:6px;flex-wrap:wrap">
+      <button class="adm-btn adm-btn-red" onclick="adminCmd('kill_all')">💀 Kill All Enemies</button>
+      <button class="adm-btn adm-btn-gold" onclick="adminCmd('skip_wave')">⏭️ Skip Wave</button>
+      <button class="adm-btn adm-btn-blue" onclick="adminCmd('give_coins_game')">🪙 +500 Coins</button>
+      <button class="adm-btn adm-btn-pink" onclick="adminCmd('god_mode')">👑 God Mode</button>
+      <button class="adm-btn adm-btn-green" onclick="adminCmd('force_win')">🏆 Force Win</button>
+    </div>
+    <div style="font-size:.6rem;color:var(--dim);margin-top:6px">Game commands only work while in-game.</div>
+  </div>
+  <div class="adm-sec"><h3>👥 Players</h3><div class="admin-ulist" id="adm-users"></div></div>
+  <div class="adm-sec"><h3>📋 Admin Log</h3><div class="adm-log" id="adm-log"></div></div>`;
+}
+function refreshAdminUsers(elId='adm-users'){
+  const el=document.getElementById(elId);if(!el)return;
+  const users=[
+    {n:PS.username,role:PS.isAdmin?'Admin':'Owner',col:'#ff006e',isAdmin:true},
+    {n:'SkibidiKing99',role:'Member',col:'#4361ee',isAdmin:false},
+    {n:'TitanCam_Pro',role:'Member',col:'#57cc99',isAdmin:false},
+    {n:'NewPlayer123',role:'Member',col:'#f9c74f',isAdmin:false},
+  ];
+  el.innerHTML=users.map(u=>`
+    <div class="adm-urow${u.isAdmin?' is-admin':''}">
+      <div class="adm-ua" style="background:${u.col}">${u.n.charAt(0)}</div>
+      <div class="adm-uinfo"><div class="adm-uname">${u.n}${u.isAdmin?'<span class="adm-badge">ADMIN</span>':''}</div><div class="adm-urole">${u.role}</div></div>
+      <div class="adm-uacts">
+        <button class="adm-uact adm-act-give" onclick="adminGiveToUser('${u.n}')">+💎</button>
+        ${!u.isAdmin?`<button class="adm-uact adm-act-ban" onclick="adminBanUser('${u.n}')">Ban</button>`:''}
+      </div>
+    </div>`).join('');
+}
+function refreshAdminLog(elId='adm-log'){
+  const el=document.getElementById(elId);if(!el)return;
+  if(!ADMIN_LOG.length){el.innerHTML='<div class="adm-log-entry">No actions yet.</div>';return;}
+  el.innerHTML=ADMIN_LOG.slice(0,30).map(e=>`<div class="adm-log-entry ${e.type}">${e.msg}</div>`).join('');
+}
+function adminGive(type){
+  const amt=parseInt((document.getElementById('adm-amount')||{value:'1000'}).value)||1000;
+  if(type==='gems'){PS.gems+=amt;pushNotif('💎 +'+amt+' Gems!','admin');}
+  else if(type==='coins'){PS.coins+=amt;pushNotif('🪙 +'+amt+' Coins!','admin');}
+  else if(type==='rm'){PS.rm+=amt;pushNotif('🔴 +'+amt+' RM!','admin');}
+  else if(type==='unit'){
+    giveAdminUnits();pushNotif('👑 Admin units given!','admin');buildInventory();
+  }
+  renderLobbyStats(); savePS(); adminLog('Admin gave '+amt+' '+type,'lg');
+  refreshAdminLog(); buildAdminContent();
+}
+function adminGiveToUser(name){
+  const amt=parseInt(prompt('Give how many gems to '+name+'?','500')||0);
+  if(amt>0&&name===PS.username){PS.gems+=amt;renderLobbyStats();savePS();}
+  adminLog('Gave '+amt+' gems to '+name,'lg'); refreshAdminLog(); pushNotif('💎 Gave '+amt+' gems to '+name,'admin');
+}
+function adminBanUser(name){adminLog('Banned: '+name,'lb');refreshAdminLog();pushNotif('🚫 '+name+' banned (simulated)','red');}
+function adminCmd(cmd){
+  if(cmd==='kill_all'&&typeof GS!=='undefined'&&GS.status==='playing'){
+    const cnt=GS.enemies.length;
+    GS.enemies.forEach(e=>{if(typeof spawnParticles==='function')spawnParticles(e.x,e.y,'#ff006e',10,'death');});
+    GS.coins+=cnt*12;GS.kills+=cnt;GS.enemies=[];
+    if(typeof updateGameHUD==='function')updateGameHUD();
+    pushNotif('⚡ Admin: '+cnt+' enemies killed!','admin');adminLog('Admin kill all: '+cnt,'lg');
+  } else if(cmd==='skip_wave'&&typeof GS!=='undefined'&&GS.status==='playing'){
+    GS.enemies=[];GS.waveQueue=[];GS.waveActive=false;
+    pushNotif('⏭️ Wave skipped!','admin');adminLog('Admin skip wave','lw');
+  } else if(cmd==='give_coins_game'&&typeof GS!=='undefined'&&GS.status==='playing'){
+    GS.coins+=500;if(typeof updateGameHUD==='function')updateGameHUD();
+    pushNotif('🪙 +500 game coins!','admin');adminLog('Admin +500 coins','lg');
+  } else if(cmd==='god_mode'){
+    if(typeof GS!=='undefined')GS.godMode=!GS.godMode;
+    pushNotif('👑 God Mode: '+(GS.godMode?'ON':'OFF'),'admin');adminLog('Admin god mode: '+(GS.godMode?'ON':'OFF'),'lw');
+  } else if(cmd==='force_win'&&typeof triggerWin==='function'&&typeof GS!=='undefined'&&GS.status==='playing'){
+    triggerWin();adminLog('Admin force win','lg');
+  } else pushNotif('Command only works in-game!','red');
+  refreshAdminLog();
 }
 
 /* ════════════════════════════════════════════════════════════════
@@ -1594,65 +2157,143 @@ window.addEventListener('resize',()=>{
 
 function initGame(){
   resizeCanvas();
-  const mode=GS.mpActive?'multiplayer':PS.selectedMode;
+  const mode=GS.mpActive?(GS.mpMode||PS.selectedMode):PS.selectedMode;
   Object.assign(GS,{
     mode, maxWaves:MODE_WAVES[mode]||15,
     wave:0,lives:20,coins:150,kills:0,speed:1,
     status:'idle',waveActive:false,waveQueue:[],waveTimer:0,
-    towers:[],enemies:[],projectiles:[],particles:[],aoeRings:[],
+    towers:[],tempTowers:[],enemies:[],projectiles:[],particles:[],aoeRings:[],skillFX:[],
     selDefId:null,selTower:null,
-    aoeMode:mode==='aoe',
+    aoeMode:mode==='aoe',godMode:(PS.isAdmin&&GS.godMode)||false,
+    skillCooldowns:{},
     sessPlaced:0,sessDmg:0,sessSpent:0,bestTower:null,
     startTime:Date.now(),lastTime:performance.now(),
     mouseX:GW/2,mouseY:GH/2,placeOk:false,
   });
   buildUnitPalette();
+  buildSkillBar();
   updateGameHUD();
   hideOverlays();
   // Mode badge
-  const modeLabels={easy:'🌿 Easy',medium:'⚔️ Med',hard:'🔥 Hard',nightmare:'💀 NM',endless:'♾️ End',aoe:'💥 AOE',multiplayer:'🌐 Co-op'};
-  document.getElementById('gs-mode').textContent=modeLabels[mode]||mode;
+  const modeLabels={easy:'🌿 Easy',medium:'⚔️ Med',hard:'🔥 Hard',nightmare:'💀 NM',endless:'♾️ End',aoe:'💥 AOE',multiplayer:'🌐 Co-op',event:'🌿 Event'};
+  const modeColors={easy:'var(--green)',medium:'var(--gold)',hard:'var(--red)',nightmare:'var(--purple2)',endless:'var(--blue)',aoe:'var(--pink)',multiplayer:'#3a86ff',event:'var(--cyan)'};
+  const modeEl=document.getElementById('gs-mode');
+  modeEl.textContent=modeLabels[mode]||mode;
+  modeEl.style.color=modeColors[mode]||'var(--white)';
   document.getElementById('gs-mw').textContent=MODE_WAVES[mode]===999?'∞':MODE_WAVES[mode];
   document.getElementById('btn-wave').textContent='▶ Start Wave 1';
   document.getElementById('btn-wave').disabled=false;
   document.getElementById('g-hint').classList.remove('on');
   document.getElementById('btn-aoe').style.display=mode==='aoe'?'':'none';
-  document.getElementById('btn-aoe').textContent=`💥 AOE: ${GS.aoeMode?'ON':'OFF'}`;
+  document.getElementById('btn-aoe').textContent='💥 AOE: '+(GS.aoeMode?'ON':'OFF');
   document.getElementById('btn-aoe').classList.toggle('aoe-on',GS.aoeMode);
+  // Skill FX canvas setup
+  const sfxCanvas=document.getElementById('skill-fx');
+  if(sfxCanvas){sfxCanvas.width=GW;sfxCanvas.height=GH;GS.sfxCtx=sfxCanvas.getContext('2d');}
   // MP UI
   const mpInfo=document.getElementById('gs-mp-info');
   const mpSec=document.getElementById('rp-mp-sec');
   if(GS.mpActive&&GS.mpPlayers){
-    mpInfo.style.display='';
-    document.getElementById('gs-mp-cnt').textContent=GS.mpPlayers.length;
-    mpSec.style.display='';
-    renderMPChips();
+    if(mpInfo){mpInfo.style.display='';document.getElementById('gs-mp-cnt').textContent=GS.mpPlayers.length;}
+    if(mpSec){mpSec.style.display='';renderMPChips();}
   } else {
-    mpInfo.style.display='none';
-    mpSec.style.display='none';
+    if(mpInfo)mpInfo.style.display='none';
+    if(mpSec)mpSec.style.display='none';
   }
   cancelAnimationFrame(gameRAF);
   gameRAF=requestAnimationFrame(gameLoop);
 }
 
+/* ══ SKILL BAR BUILDER ══ */
+function buildSkillBar(){
+  const bar=document.getElementById('skill-bar');if(!bar)return;
+  bar.innerHTML='';
+  const loadout=PS.loadout.filter(Boolean);
+  const seen=new Set();
+  const skillList=[];
+  // Collect skills from loadout
+  loadout.forEach(uid=>{
+    const u=ALL_UNITS.find(x=>x.id===uid);
+    if(u&&u.skill&&!seen.has(u.skill)){seen.add(u.skill);skillList.push({...SKILLS[u.skill],id:u.skill});}
+  });
+  // Admin gets extra skills
+  if(PS.isAdmin){
+    if(!seen.has('admin_wipe')){skillList.push({...SKILLS['admin_wipe'],id:'admin_wipe'});}
+    if(!seen.has('admin_gold')){skillList.push({...SKILLS['admin_gold'],id:'admin_gold'});}
+  }
+  GS.activeSkills=skillList;
+  const keys=['Q','W','E','R','T'];
+  skillList.slice(0,5).forEach((sk,i)=>{
+    const slot=document.createElement('div');
+    slot.className='skill-slot skill-ready';
+    slot.id='skill-slot-'+sk.id;
+    slot.title=sk.name+': '+sk.desc+'
+['+keys[i]+'] CD: '+sk.cd+'s';
+    slot.innerHTML=sk.icon+'<span class="skill-key-badge">'+keys[i]+'</span>';
+    slot.onclick=()=>activateSkill(sk.id);
+    bar.appendChild(slot);
+  });
+}
+
+function activateSkill(skillId){
+  const sk=SKILLS[skillId];if(!sk)return;
+  if(sk.adminOnly&&!PS.isAdmin){showToast('Admin only!');return;}
+  const now=Date.now();
+  const last=GS.skillCooldowns[skillId]||0;
+  const elapsed=(now-last)/1000;
+  if(elapsed<sk.cd){showToast(sk.icon+' CD: '+Math.ceil(sk.cd-elapsed)+'s');return;}
+  const ok=sk.activate(GS);
+  if(ok!==false){
+    GS.skillCooldowns[skillId]=now;
+    playSFX('summon');
+    pushNotif(sk.icon+' '+sk.name+' activated!','blue');
+    const slot=document.getElementById('skill-slot-'+skillId);
+    if(slot){
+      slot.classList.remove('skill-ready');slot.classList.add('skill-cd');
+      const cover=document.createElement('div');cover.className='skill-cd-cover';slot.appendChild(cover);
+      let rem=sk.cd;
+      const tick=setInterval(()=>{
+        rem-=0.5;cover.textContent=Math.ceil(rem)+'s';
+        if(rem<=0){clearInterval(tick);slot.classList.remove('skill-cd');slot.classList.add('skill-ready');cover.remove();pushNotif(sk.icon+' '+sk.name+' ready!');}
+      },500);
+    }
+  }
+}
+
+// Keyboard skill shortcuts
+document.addEventListener('keydown',function(e){
+  if(!GS||GS.status!=='playing')return;
+  const keyMap={Q:0,W:1,E:2,R:3,T:4};
+  const idx=keyMap[e.key.toUpperCase()];
+  if(idx!==undefined&&GS.activeSkills&&GS.activeSkills[idx]) activateSkill(GS.activeSkills[idx].id);
+});
+
 function buildUnitPalette(){
   const el=document.getElementById('gunit-list');
   el.innerHTML='';
   const loadout=PS.loadout.filter(Boolean);
-  loadout.forEach(uid=>{
+  // Admin units always available for admins
+  const adminIds=['admin_god','admin_nuke','admin_speed'];
+  const palette=[...loadout,...(PS.isAdmin?adminIds.filter(id=>!loadout.includes(id)):[])];
+  palette.forEach(uid=>{
     const u=ALL_UNITS.find(x=>x.id===uid);
-    if(!u) return;
+    if(!u)return;
+    // Exclusive units cost coins to PLACE (not summon - they're free to summon but cost to place)
+    const placeCost=u.cost||0;
+    const cantAfford=placeCost>0&&GS.coins<placeCost&&!PS.isAdmin;
     const d=document.createElement('div');
-    d.className='gucard'+(u.cost>0&&GS.coins<u.cost?' gcant':'');
+    d.className='gucard'+(cantAfford?' gcant':'')+(u.adminOnly?' gadmin':'');
     d.dataset.uid=uid;
+    const sk=u.skill&&SKILLS[u.skill];
     d.innerHTML=`<div class="gue">${u.e}</div><div class="gut">
       <div class="gun">${u.n}</div>
-      <div class="guc">🪙${u.cost||'Summon'}</div>
-      <div class="gur">DMG:${u.dmg} SPD:${u.spd}</div>
+      <div class="guc">🪙${placeCost||'Free'}</div>
+      <div class="gur">DMG:${u.dmg} S:${u.spd}</div>
+      ${sk?`<div style="font-size:.48rem;color:var(--purple2);font-weight:800">${sk.icon}${sk.name}</div>`:''}
     </div>`;
     d.onclick=()=>{
-      if(GS.status==='gameover'||GS.status==='win') return;
-      if(u.cost>0&&GS.coins<u.cost){showToast('Not enough coins!');return}
+      if(GS.status==='gameover'||GS.status==='win')return;
+      if(cantAfford){showToast('Not enough coins!');return;}
       GS.selDefId=(GS.selDefId===uid?null:uid);
       GS.selTower=null;
       refreshPalette();updateTowerPanel();
@@ -1720,7 +2361,11 @@ canvas.addEventListener('click',e=>{
     if(isOnPath(mx,my)){showToast('❌ Cannot place on path!');return}
     if(isOccupied(mx,my)){showToast('❌ Space occupied!');return}
     const u=ALL_UNITS.find(x=>x.id===GS.selDefId);
-    if(u.cost>0&&GS.coins<u.cost){showToast('❌ Not enough coins!');return}
+    if(u.cost>0&&GS.coins<u.cost&&!PS.isAdmin){
+      if(u.r==='exclusive'){showToast(`❌ Need 🪙${u.cost} to place ${u.n}!`);}
+      else{showToast('❌ Not enough coins!');}
+      return;
+    }
     placeTower(u,mx,my);return;
   }
   const hit=GS.towers.find(t=>(t.x-mx)**2+(t.y-my)**2<22*22);
@@ -1740,8 +2385,8 @@ function rarityColor(r){
 }
 
 function placeTower(def,x,y){
-  if(def.cost>0) GS.coins-=def.cost;
-  GS.sessSpent+=def.cost;GS.sessPlaced++;
+  if(def.cost>0&&!PS.isAdmin) GS.coins-=def.cost;
+  GS.sessSpent+=(PS.isAdmin?0:def.cost);GS.sessPlaced++;
   const t={
     defId:def.id,e:def.e,x,y,
     dmg:def.dmg,spd:def.spd,range:def.range,
@@ -1754,6 +2399,7 @@ function placeTower(def,x,y){
     kills:0,totalDmg:0,
     sellVal:def.sell||Math.round((def.cost||50)*0.4),
     fireTimer:0,target:null,n:def.n,
+    admin:def.admin||false,animTime:0,
   };
   GS.towers.push(t);
   GS.selDefId=null;GS.selTower=t;
@@ -1950,6 +2596,15 @@ function dealDmg(tower,enemy){
     playSFX('coin');
   }
 }
+// Helper for skills to kill enemies from state
+function killEnemy(enemy, state){
+  const s=state||GS;
+  s.kills++;s.coins+=enemy.rew;
+  spawnParticles(enemy.x,enemy.y,enemy.col,14,'death');
+  spawnParticles(enemy.x,enemy.y,'#f9c74f',4,'coin');
+  s.enemies=s.enemies.filter(e=>e!==enemy);
+  PS.kills++;updateGameHUD();refreshPalette();
+}
 
 function updateProjectiles(dt){
   GS.projectiles=GS.projectiles.filter(p=>{
@@ -1996,6 +2651,30 @@ function draw(){
 }
 
 function drawBG(){
+  const mode=GS.mode;
+  if(mode==='event'){
+    ctx.fillStyle='#050f05';ctx.fillRect(0,0,GW,GH);
+    const jg=ctx.createLinearGradient(0,0,0,GH);
+    jg.addColorStop(0,'rgba(0,30,8,.9)');jg.addColorStop(1,'rgba(0,15,3,.98)');
+    ctx.fillStyle=jg;ctx.fillRect(0,0,GW,GH);
+    // Jungle decorations
+    const treePos=[[.05,.08],[.92,.15],[.1,.82],[.87,.78],[.5,.04],[.74,.92],[.32,.9],[.62,.06]];
+    treePos.forEach(([fx,fy])=>{
+      ctx.globalAlpha=.4;ctx.font=(22+Math.sin(Date.now()*.0012+fx*10)*3)+'px serif';
+      ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('🌿',fx*GW,fy*GH);ctx.globalAlpha=1;
+    });
+    ctx.textAlign='left';ctx.textBaseline='alphabetic';
+    return;
+  }
+  if(mode==='aoe'){
+    ctx.fillStyle='#12052a';ctx.fillRect(0,0,GW,GH);
+    ctx.fillStyle='rgba(255,0,110,'+(0.04+Math.sin(Date.now()*.003)*.02)+')';
+    ctx.fillRect(0,0,GW,GH);
+    ctx.strokeStyle='rgba(255,0,110,.06)';ctx.lineWidth=1;
+    for(let x=0;x<GW;x+=44){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,GH);ctx.stroke()}
+    for(let y=0;y<GH;y+=44){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(GW,y);ctx.stroke()}
+    return;
+  }
   const g=ctx.createLinearGradient(0,0,0,GH);
   g.addColorStop(0,'#07080f');g.addColorStop(1,'#0c1220');
   ctx.fillStyle=g;ctx.fillRect(0,0,GW,GH);
@@ -2045,7 +2724,8 @@ function drawPath(){
 }
 
 function drawTowers(){
-  GS.towers.forEach(t=>{
+  [...GS.towers,...(GS.tempTowers||[])].forEach(t=>{
+    t.animTime=(t.animTime||0)+16;
     const isSel=t===GS.selTower;
     const mx=GS.mouseX,my=GS.mouseY;
     const isHov=!GS.selDefId&&Math.sqrt((t.x-mx)**2+(t.y-my)**2)<22;
@@ -2063,6 +2743,66 @@ function drawTowers(){
       ctx.beginPath();ctx.arc(t.x,t.y,aoeR,0,Math.PI*2);ctx.stroke();
       ctx.setLineDash([]);
     }
+    // === SPECIAL ANIMATIONS ===
+    const def=ALL_UNITS.find(u=>u.id===t.defId);
+    const animType=def?.anim||null;
+    if(animType==='admin'){
+      // Admin GOD - pulsing golden aura with rotating rings
+      const pulse=Math.sin(t.animTime*.08)*0.4+0.6;
+      ctx.save();
+      // Outer rotating ring
+      ctx.strokeStyle=`rgba(255,0,110,${pulse*.7})`;ctx.lineWidth=2;
+      ctx.save();ctx.translate(t.x,t.y);ctx.rotate(t.animTime*.04);
+      for(let i=0;i<3;i++){
+        const a=i*(Math.PI*2/3);
+        ctx.strokeStyle=`rgba(255,0,110,${pulse*.5})`;ctx.lineWidth=1.5;
+        ctx.beginPath();ctx.arc(Math.cos(a)*28,Math.sin(a)*28,8,0,Math.PI*2);ctx.stroke();
+      }
+      ctx.restore();
+      // Crown glow
+      ctx.shadowColor='#ff006e';ctx.shadowBlur=18*pulse;
+      ctx.strokeStyle=`rgba(255,0,110,${pulse*.9})`;ctx.lineWidth=2.5;
+      ctx.beginPath();ctx.arc(t.x,t.y,22,0,Math.PI*2);ctx.stroke();
+      ctx.shadowBlur=0;ctx.restore();
+    } else if(animType==='nuke'){
+      // Nuke - warning radiation rings
+      const p2=Math.sin(t.animTime*.12)*0.5+0.5;
+      ctx.save();
+      for(let i=0;i<3;i++){
+        const r=16+i*9+p2*6;
+        ctx.strokeStyle=`rgba(255,200,0,${(.7-i*.2)*p2})`;ctx.lineWidth=1.5;
+        ctx.beginPath();ctx.arc(t.x,t.y,r,0,Math.PI*2);ctx.stroke();
+      }
+      ctx.restore();
+    } else if(animType==='lightning'){
+      // Speed Demon - lightning sparks
+      ctx.save();
+      for(let i=0;i<4;i++){
+        const ang=t.animTime*.15+i*(Math.PI/2);
+        const r=24+Math.sin(t.animTime*.2+i)*5;
+        const lx=t.x+Math.cos(ang)*r,ly=t.y+Math.sin(ang)*r;
+        ctx.strokeStyle=`rgba(76,201,240,${.6+Math.sin(t.animTime*.3+i)*.3})`;
+        ctx.lineWidth=1.5;ctx.beginPath();
+        ctx.moveTo(t.x+Math.cos(ang)*14,t.y+Math.sin(ang)*14);
+        ctx.lineTo(lx,ly);ctx.stroke();
+      }
+      ctx.restore();
+    }
+    // Skill cooldown ring - show when skill is on CD
+    if(def?.skill&&GS.skillCDs[def.skill]){
+      const cd=SKILLS[def.skill]?.cd||30;
+      const elapsed=(Date.now()-GS.skillCDs[def.skill])/1000;
+      if(elapsed<cd){
+        const pct=elapsed/cd;
+        ctx.strokeStyle='rgba(199,125,255,.7)';ctx.lineWidth=2.5;
+        ctx.beginPath();ctx.arc(t.x,t.y,20,-Math.PI/2,-Math.PI/2+pct*Math.PI*2);ctx.stroke();
+      }
+    }
+    // Freeze aura
+    if(t.freeze){
+      ctx.strokeStyle=`rgba(100,200,255,${.15+Math.sin(t.animTime*.05)*.07})`;ctx.lineWidth=1;
+      ctx.beginPath();ctx.arc(t.x,t.y,21,0,Math.PI*2);ctx.stroke();
+    }
     ctx.fillStyle='rgba(0,0,0,.4)';ctx.beginPath();ctx.ellipse(t.x,t.y+19,15,5,0,0,Math.PI*2);ctx.fill();
     ctx.fillStyle=t.col+'33';ctx.strokeStyle=t.col;ctx.lineWidth=isSel?3:1.8;
     ctx.beginPath();ctx.arc(t.x,t.y,19,0,Math.PI*2);ctx.fill();ctx.stroke();
@@ -2077,6 +2817,14 @@ function drawTowers(){
     ctx.font='14px serif';ctx.textAlign='center';ctx.textBaseline='middle';
     ctx.fillText(t.e,t.x,t.y);
     if(t.level>0){ctx.fillStyle='#f9c74f';ctx.font='bold 7px Nunito';ctx.fillText('★'.repeat(t.level),t.x,t.y+14)}
+    // Admin badge
+    if(t.admin){ctx.fillStyle='rgba(255,0,110,.9)';ctx.font='bold 6px Nunito';ctx.fillText('ADMIN',t.x,t.y-21)}
+    // Temp tower timer bar
+    if(t.temp&&t.tempLife!==undefined){
+      const maxL=18000;const pct=t.tempLife/maxL;
+      ctx.fillStyle='rgba(0,0,0,.5)';ctx.fillRect(t.x-16,t.y+22,32,3);
+      ctx.fillStyle=pct>.5?'#57cc99':pct>.25?'#f9c74f':'#ef233c';ctx.fillRect(t.x-16,t.y+22,32*pct,3);
+    }
   });
 }
 
@@ -2176,26 +2924,96 @@ function triggerGameOver(){
 function triggerWin(){
   GS.status='win';
   cancelAnimationFrame(gameRAF);gameRAF=null;
-  const gems=Math.round(50+GS.kills*.12+GS.lives*5);
-  PS.gems+=gems;PS.wins++;
-  renderLobbyStats();
+  const eventBonus=GS.mode==='event'?75:0;
+  const gems=Math.round(50+GS.kills*.12+GS.lives*5+GS.wave*3+eventBonus);
+  PS.gems+=gems;PS.wins++;PS.kills+=GS.kills;
+  if(GS.mode==='event') pushNotif('🌿 Event Clear! +'+eventBonus+' bonus gems!','green');
+  renderLobbyStats(); savePS();
   document.getElementById('win-wave').textContent=GS.wave;
   document.getElementById('win-kills').textContent=GS.kills;
   document.getElementById('win-gems').textContent=gems;
   document.getElementById('win-rating').textContent=GS.lives>=15?'⭐⭐⭐':GS.lives>=8?'⭐⭐':'⭐';
   document.getElementById('ov-win').classList.add('on');
+  // Victory particles
+  for(let i=0;i<5;i++) setTimeout(()=>{spawnParticles(GW*Math.random(),GH*.3,'#f9c74f',20,'death');spawnParticles(GW*Math.random(),GH*.5,'#4cc9f0',12,'death');},i*200);
   playSFX('summon');
 }
 
 function restartGame(){hideOverlays();initGame()}
 function goLobby(){
   cancelAnimationFrame(gameRAF);gameRAF=null;
-  GS.mpActive=false;GS.mpPlayers=null;
+  GS.mpActive=false;GS.mpPlayers=null;GS.mpMode=null;
   switchScreen('lobby');
   renderLobbyStats();buildLoadout();buildSummonBanners();
 }
 
 /* ─ MAIN LOOP ─ */
+function botAI(dt){
+  if(!GS.mpPlayers)return;
+  GS.mpPlayers.filter(p=>p.isBot).forEach(bot=>{
+    bot.botTimer=(bot.botTimer||0)+dt*GS.speed;
+    if(bot.botTimer<2800||(bot.botPlaced||0)>15)return;
+    bot.botTimer=0; bot.botPlaced=(bot.botPlaced||0)+1;
+    if(!GS.waveActive&&GS.enemies.length===0)return;
+    const botIds=['cameraman','speakerman','tvman','drillman','clockman','large_cam'];
+    const uid=botIds[Math.floor(Math.random()*botIds.length)];
+    const def=ALL_UNITS.find(u=>u.id===uid);if(!def)return;
+    for(let a=0;a<25;a++){
+      const px=GW*.15+Math.random()*GW*.7, py=GH*.1+Math.random()*GH*.8;
+      if(!isOnPath(px,py,34)&&!isOccupied(px,py,26)){
+        GS.towers.push({
+          defId:uid,e:def.e,x:px,y:py,
+          dmg:def.dmg,spd:def.spd,range:def.range,
+          aoe:GS.aoeMode||def.aoe||false,slow:def.slow||false,freeze:def.freeze||false,
+          col:rarityColor(def.r),level:0,maxLevel:def.upgs.length,upgs:def.upgs,
+          kills:0,totalDmg:0,sellVal:def.sell||30,fireTimer:0,target:null,
+          n:def.n+' ('+bot.n+')',isBot:true,admin:false,animTime:0,
+        });
+        spawnParticles(px,py,bot.col,5,'place');break;
+      }
+    }
+  });
+}
+
+function drawSkillFX(){
+  const sfxCtx=GS.sfxCtx;if(!sfxCtx||!GS.skillFX)return;
+  sfxCtx.clearRect(0,0,GW,GH);
+  GS.skillFX=(GS.skillFX||[]).filter(fx=>{fx.life--;return fx.life>0;});
+  GS.skillFX.forEach(fx=>{
+    const a=fx.life/fx.maxLife;
+    if(fx.type==='meteor'){
+      const prog=1-a;
+      const cx=fx.x+(fx.tx-fx.x)*prog, cy=fx.y+(fx.ty-fx.y)*prog;
+      sfxCtx.save();sfxCtx.globalAlpha=a;
+      // Trail
+      for(let i=0;i<7;i++){
+        const tp=Math.max(0,prog-i*.06);
+        const tx2=fx.x+(fx.tx-fx.x)*tp, ty2=fx.y+(fx.ty-fx.y)*tp;
+        sfxCtx.beginPath();sfxCtx.arc(tx2,ty2,8-i,0,Math.PI*2);
+        sfxCtx.fillStyle=i===0?'#f3722c':'#ff8800';sfxCtx.globalAlpha=a*(1-i/8);sfxCtx.fill();
+      }
+      sfxCtx.globalAlpha=a;sfxCtx.beginPath();sfxCtx.arc(cx,cy,13,0,Math.PI*2);
+      const mg=sfxCtx.createRadialGradient(cx,cy,0,cx,cy,13);
+      mg.addColorStop(0,'#fff');mg.addColorStop(0.4,'#f3722c');mg.addColorStop(1,'transparent');
+      sfxCtx.fillStyle=mg;sfxCtx.fill();sfxCtx.restore();
+    } else if(fx.type==='blizzard'){
+      sfxCtx.save();sfxCtx.globalAlpha=a*0.3;sfxCtx.fillStyle='#4cc9f0';sfxCtx.fillRect(0,0,GW,GH);
+      const t=fx.maxLife-fx.life;
+      for(let i=0;i<30;i++){
+        const sx=((Math.sin(i*1.7+t*0.003)+1)/2)*GW, sy=((i*37+t*0.1)%GH);
+        sfxCtx.globalAlpha=a*0.75;sfxCtx.font='14px serif';sfxCtx.fillStyle='#fff';sfxCtx.fillText('❄',sx,sy);
+      }
+      sfxCtx.restore();
+    } else if(fx.type==='nuke'){
+      const r=(1-a)*Math.max(GW,GH)*0.65;
+      sfxCtx.save();sfxCtx.globalAlpha=a*0.55;
+      const ng=sfxCtx.createRadialGradient(GW/2,GH/2,0,GW/2,GH/2,r);
+      ng.addColorStop(0,'#fff');ng.addColorStop(0.3,'#ff006e');ng.addColorStop(1,'transparent');
+      sfxCtx.beginPath();sfxCtx.arc(GW/2,GH/2,r,0,Math.PI*2);sfxCtx.fillStyle=ng;sfxCtx.fill();sfxCtx.restore();
+    }
+  });
+}
+
 function gameLoop(ts){
   gameRAF=requestAnimationFrame(gameLoop);
   const dt=Math.min(ts-GS.lastTime,120);GS.lastTime=ts;
@@ -2205,20 +3023,23 @@ function gameLoop(ts){
     while(GS.waveQueue.length&&GS.waveQueue[0].delay<=GS.waveTimer) spawnEnemy(GS.waveQueue.shift());
     if(!GS.waveQueue.length&&!GS.enemies.length){
       GS.waveActive=false;
-      const bonus=30+GS.wave*8+(GS.aoeMode?20:0)+(GS.mpActive?(GS.mpPlayers?.length||1)*15:0);
+      const bonus=30+GS.wave*8+(GS.aoeMode?20:0)+(GS.mpActive?(GS.mpPlayers?.length||1)*15:0)+(GS.mode==='event'?25:0);
       GS.coins+=bonus;updateGameHUD();refreshPalette();
       showWavePop(`Wave ${GS.wave} Done! +${bonus}🪙`);
-      if(GS.wave>=GS.maxWaves&&GS.mode!=='endless'){setTimeout(triggerWin,1400);return}
+      if(GS.wave>=GS.maxWaves&&GS.mode!=='endless'){setTimeout(triggerWin,1400);return;}
       document.getElementById('btn-wave').textContent=`▶ Start Wave ${GS.wave+1}`;
       document.getElementById('btn-wave').disabled=false;
       updateWavePanel();
     }
   }
-  const dead=[];GS.enemies.forEach(e=>{if(moveEnemy(e,dt)) dead.push(e)});
+  const dead=[];GS.enemies.forEach(e=>{if(moveEnemy(e,dt))dead.push(e);});
   GS.enemies=GS.enemies.filter(e=>!dead.includes(e));
-  GS.towers.forEach(t=>updateTower(t,dt));
+  [...GS.towers,...(GS.tempTowers||[])].forEach(t=>updateTower(t,dt));
+  // Expire temp towers
+  if(GS.tempTowers){GS.tempTowers=GS.tempTowers.filter(t=>{if(t.temp){t.tempLife-=dt*GS.speed;return t.tempLife>0;}return true;});}
   updateProjectiles(dt);updateParticles(dt);
-  draw();
+  if(GS.mpActive) botAI(dt);
+  draw();drawSkillFX();
   // Low-freq UI updates
   if(Math.floor(ts/250)!==Math.floor((ts-dt)/250)){
     updateWavePanel();updateTowerPanel();updateSessionStats();
@@ -2237,9 +3058,8 @@ function switchScreen(id){
 /* ════════════════════════════════════════════════════════════════
    BOOT
 ════════════════════════════════════════════════════════════════ */
-// Give starting units
-['camerawoman','cameraman','speakerman','tvman','drillman'].forEach(id=>{PS.inventory[id]=1});
-initLobby();
+// Boot: show login screen, not lobby
+switchScreen('login');
 </script>
 </body>
 </html>
